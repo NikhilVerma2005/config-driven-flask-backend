@@ -1,0 +1,25 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+     Loaded: loaded (]8;;file://fedora/usr/lib/systemd/system/docker.service\/usr/lib/systemd/system/docker.service]8;;\; [0;1;32menabled[0m; preset: [0;1;38:5:185mdisabled[0m)
+    Drop-In: /usr/lib/systemd/system/service.d
+             └─]8;;file://fedora/usr/lib/systemd/system/service.d/10-timeout-abort.conf\10-timeout-abort.conf]8;;\, ]8;;file://fedora/usr/lib/systemd/system/service.d/50-keep-warm.conf\50-keep-warm.conf]8;;\
+     Active: [0;1;32mactive (running)[0m since Sat 2026-01-03 15:32:24 IST; 16min ago
+ Invocation: cec03073c7804aec8e04be1959d98e4d
+TriggeredBy: [0;1;32m●[0m docker.socket
+       Docs: ]8;;https://docs.docker.com\https://docs.docker.com]8;;\
+   Main PID: 20511 (dockerd)
+      Tasks: 14
+     Memory: 137.6M (peak: 143.5M)
+        CPU: 701ms
+     CGroup: /system.slice/docker.service
+             └─[0;38;5;245m20511 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock[0m
+
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.685874103+05:30" level=info msg="Loading containers: done."
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.694408031+05:30" level=info msg="Docker daemon" commit=fbf3ed2 containerd-snapshotter=true storage-driver=overlayfs version=29.1.3
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.694584216+05:30" level=info msg="Initializing buildkit"
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.714400731+05:30" level=info msg="Completed buildkit initialization"
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.719255398+05:30" level=info msg="Daemon has completed initialization"
+Jan 03 15:32:24 fedora dockerd[20511]: time="2026-01-03T15:32:24.719323297+05:30" level=info msg="API listen on /run/docker.sock"
+Jan 03 15:32:24 fedora systemd[1]: Started docker.service - Docker Application Container Engine.
+Jan 03 15:32:38 fedora dockerd[20511]: time="2026-01-03T15:32:38.070664198+05:30" level=info msg="image pulled" digest="sha256:d4aaab6242e0cace87e2ec17a2ed3d779d18fbfd03042ea58f2995626396a274" remote="docker.io/library/hello-world:latest"
+Jan 03 15:32:38 fedora dockerd[20511]: time="2026-01-03T15:32:38.411883784+05:30" level=info msg="sbJoin: gwep4 ''->'0a5f5c8e0e47', gwep6 ''->''" eid=0a5f5c8e0e47 ep=sweet_beaver net=bridge nid=539c09852993
+Jan 03 15:32:38 fedora dockerd[20511]: time="2026-01-03T15:32:38.460670084+05:30" level=info msg="ignoring event" container=2d8483c8ce0eb5804eeb33965cbd768ca932b6b803c6ef7d5e3da4d9ff0076fb module=libcontainerd namespace=moby topic=/tasks/delete type="*events.TaskDelete"

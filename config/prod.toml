@@ -1,0 +1,10 @@
+[server]
+port = 8000
+debug = false
+
+[database]
+type = "postgres"
+url = "postgresql://user:password@localhost/proddb"
+
+[auth]
+secret_key = "prod-secret-key"

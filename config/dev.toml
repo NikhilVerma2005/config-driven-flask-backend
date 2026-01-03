@@ -1,0 +1,10 @@
+[server]
+port = 5000
+debug = true
+
+[database]
+type = "sqlite"
+url = "sqlite:///dev.db"
+
+[auth]
+secret_key = "dev-secret-key"
