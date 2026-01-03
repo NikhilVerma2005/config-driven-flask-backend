@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY") or config["auth"]["secret_key"]
 
+#Flask 3 compatible DB initialization
 if os.getenv("APP_ENV", "dev") != "test":
     init_db()
 
