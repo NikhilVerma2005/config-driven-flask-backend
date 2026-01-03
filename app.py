@@ -14,6 +14,10 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY") or config["auth"]["secret_key"]
 
+@app.before_first_request
+def initialize_database():
+    init_db()
+
 @app.route("/health")
 def health():
     return {"status": "ok"}, 200

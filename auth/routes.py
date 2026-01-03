@@ -5,6 +5,27 @@ from db.models import User
 from utils.db_session import get_db
 from .decorators import login_required, role_required
 import logging
+from werkzeug.security import generate_password_hash
+
+def ensure_admin_user():
+    """
+    Ensures at least one user exists in the database.
+    Runs safely only when DB is empty.
+    """
+    db = get_db()
+    user_exists = db.query(User).first()
+
+    if not user_exists:
+        admin = User(
+            username="nik",
+            password_hash=generate_password_hash("pass123"),
+            role="admin"
+        )
+        db.add(admin)
+        db.commit()
+        logger.info("Default admin user created")
+
+    db.close()
 
 logger = logging.getLogger(__name__)
 
@@ -18,6 +39,8 @@ def login():
     password = data.get("password")
 
     logger.info(f"Login attempt for user: {username}")
+
+    ensure_admin_user()
 
     db = get_db()
     user = db.query(User).filter(User.username == username).first()   # or (User.username == username)
