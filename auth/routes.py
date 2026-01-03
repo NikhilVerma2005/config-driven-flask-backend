@@ -97,7 +97,10 @@ def register():
 @auth_bp.route("/logout", methods=["POST"])
 def logout():
     user_id = session.get("user_id")
-    session.pop("user_id", None)   # or "username" (match login!)
+    
+    # session.pop("user_id", None)   # or "username" (match login!)
+    session.clear()
+
     response = jsonify({"message": "Logged out successfully"})
 
     logger.info(f"user logged out: {user_id}")
