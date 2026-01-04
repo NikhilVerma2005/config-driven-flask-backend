@@ -157,4 +157,4 @@ Returns `Unauthorized` if not logged in.
 Engineering Student | Backend & Systems Enthusiast
 
 - GitHub: [@NikhilVerma2005](https://github.com/NikhilVerma2005)
-- LinkedIn: [Nikhil](https://www.linkedin.com/in/nikhil-verma-5767b3290/)
+- LinkedIn: [Nikhil Verma](https://www.linkedin.com/in/nikhil-verma-5767b3290/)
